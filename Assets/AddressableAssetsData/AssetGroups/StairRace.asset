@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: StairRace
+  m_EditorClassIdentifier: 
+  m_GroupName: StairRace
+  m_GUID: 44f2bb828bfb84b60a27c112b7e0f0eb
+  m_SerializeEntries:
+  - m_GUID: 06dac7b09f2af450da1674f09a4f2db6
+    m_Address: game_stairrace
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 56998aaa0b3e346cf8cd1972c2b6976c, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: df93530d833c24a1996c405f580f71f7, type: 2}
+    - {fileID: 11400000, guid: 6fa81e6ae03d54e6d8a9653a28a0d293, type: 2}

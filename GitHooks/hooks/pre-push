@@ -56,16 +56,17 @@ if [ ! -f ".gitignore" ] && [ -f "$OLDPWD/.gitignore" ]; then
     cp "$OLDPWD/.gitignore" ./
 fi
 
-# echo -e "${YELLOW}Files that would be changed in 3p repo:${NC}"
+echo -e "${YELLOW}Cleaning Assets/Games and Assets/RemoteAssets/Prefabs except StairRace and its .meta...${NC}"
 
-# rsync -avni --delete --exclude='.git' --exclude-from=".gitignore" "$OLDPWD/" ./
+# For Assets/Games — exclude StairRace folder and StairRace.meta file
+find Platform/Assets/Games/ -mindepth 1 -maxdepth 1 ! -name "StairRace" ! -name "StairRace.meta" -exec rm -rf {} +
 
-# echo -e "${YELLOW}--- End of dry run ---${NC}"
-
+# For Assets/RemoteAssets/Prefabs — exclude StairRace folder and StairRace.meta file
+find Platform/Assets/RemoteAssets/Prefabs/ -mindepth 1 -maxdepth 1 ! -name "StairRace" ! -name "StairRace.meta" -exec rm -rf {} +
 
 # Sync files using rsync (only differences)
-rsync -av --delete --exclude-from=".gitignore" \
-       --exclude='.git' --exclude='Assets/Games/*' --exclude='Assets/RemoteAssets/Prefabs/*' \
+rsync -av --delete --exclude-from=".gitignore" --exclude='.git' \
+      --exclude='Platform/Assets/Games/*' --exclude='Platform/Assets/RemoteAssets/Prefabs/*' \
       "$OLDPWD/" ./
 
 

@@ -1,0 +1,26 @@
+{
+    "qp-platform-build-arg":[
+       {
+          "input":{
+             "credential":"qp-platform-build-arg-cloudsmith-api-key-id"
+          },
+          "form":"string",
+          "name":"CLOUDSMITH_API_KEY"
+       },
+       {
+         "input":{
+            "credential":"qp-platform-build-arg-aws-access-key-id"
+         },
+         "form":"string",
+         "name":"AWS_ACCESS_KEY"
+      },
+      {
+         "input":{
+            "credential":"qp-platform-build-arg-aws-secret-access-key"
+         },
+         "form":"string",
+         "name":"AWS_SECRET_KEY"
+      }
+    ]
+}
+ 

@@ -1,0 +1,85 @@
+#!/bin/bash
+
+# Colors
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+echo -e "${YELLOW}Starting sync to 3P repo...${NC}"
+
+# Constants
+GIT_USER="Ravi-Ranjan200"
+REPO="JhignasGlance3p/TestStairRace"
+BRANCH="test-sync-branch"
+JSON_FILE="third_party_repos.json"
+TMP_DIR="/tmp/3p-repo-sync-StairRace-$$"
+
+# Parse repo URL from JSON
+REPO_URL=$(grep 'StairRace' "$JSON_FILE" | cut -d '"' -f4)
+
+if [ -z "$REPO_URL" ]; then
+    echo -e "${RED}Repo URL not found in third_party_repos.json${NC}"
+    exit 1
+fi
+
+# Clone the 3p repo
+git clone "$REPO_URL" "$TMP_DIR" || {
+    echo -e "${RED}Failed to clone repo${NC}"
+    exit 1
+}
+
+cd "$TMP_DIR"
+
+if git show-ref --quiet refs/heads/$BRANCH; then
+    echo -e "${YELLOW}Branch $BRANCH exists locally, checking it out...${NC}"
+    git checkout $BRANCH
+    git pull origin $BRANCH --rebase
+elif git ls-remote --exit-code --heads origin $BRANCH > /dev/null; then
+    echo -e "${YELLOW}Branch $BRANCH exists remotely, creating local tracking branch...${NC}"
+    git checkout -b $BRANCH origin/$BRANCH
+    git pull origin $BRANCH --rebase
+else
+    echo -e "${YELLOW}Branch $BRANCH does not exist anywhere, creating new branch...${NC}"
+    git checkout -b $BRANCH
+    git push --set-upstream origin $BRANCH
+fi
+
+# Clean tracked Platform repo files in 3p repo root (optional safety)
+# Instead of removing everything blindly, rsync with --delete will handle removals
+# But to be safe, remove only files/folders that exist in Platform folder
+# You can do a dry-run or delete after rsync --delete
+
+# Copy .gitignore if missing
+if [ ! -f ".gitignore" ] && [ -f "$OLDPWD/.gitignore" ]; then
+    echo -e "${YELLOW}Copying root .gitignore to 3p repo root...${NC}"
+    cp "$OLDPWD/.gitignore" ./
+fi
+
+# echo -e "${YELLOW}Files that would be changed in 3p repo:${NC}"
+
+# rsync -avni --delete --exclude='.git' --exclude-from=".gitignore" "$OLDPWD/" ./
+
+# echo -e "${YELLOW}--- End of dry run ---${NC}"
+
+
+# Sync files using rsync (only differences)
+rsync -av --delete --exclude-from=".gitignore" \
+       --exclude='.git' --exclude='Assets/Games/*' --exclude='Assets/RemoteAssets/Prefabs/*' \
+      "$OLDPWD/" ./
+
+
+# Stage and commit only if changes
+git add .
+if git diff --cached --quiet; then
+    echo -e "${YELLOW}No changes to commit.${NC}"
+else
+    git commit -m "chore: sync Platform contents into 3p repo root (test)"
+    git push https://$GIT_USER@github.com/$REPO.git $BRANCH && echo -e "${GREEN}Sync complete and pushed.${NC}"
+fi
+
+# Cleanup
+cd /tmp
+rm -rf "$TMP_DIR"
+
+exit 0

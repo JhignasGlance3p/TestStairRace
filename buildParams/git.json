@@ -1,0 +1,6 @@
+{
+    "delete_base_branch_on_merge": [],
+    "create_git_tag": [],
+    "declared_binaries": [],
+    "branch_protection_rules": []
+}

@@ -1,0 +1,6 @@
+{
+    "profiles": {
+        "master": false,
+        "develop": false
+    }
+}

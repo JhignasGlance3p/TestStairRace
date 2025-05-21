@@ -1,0 +1,9 @@
+{
+    "project_name": "qp-platform",
+    "project_type": "generic-script",
+    "team_email": "navjot.s@glance.com",
+    "jira_project": "GLANCE",
+    "project_language": "others",
+    "docker_compose": false,
+    "branching_workflow": "github_flow"
+}

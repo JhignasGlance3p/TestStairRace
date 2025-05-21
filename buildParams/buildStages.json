@@ -1,0 +1,18 @@
+{
+    "build": {
+      "command": "chmod +x build_aar.sh && ./build_aar.sh",
+      "timeout_in_sec": 7200
+    },
+    "lint": {
+      "command": "echo Running-Lint",
+      "timeout_in_sec": 600
+    },
+    "unit-test": {
+      "command": "echo Running Unit Test",
+      "timeout_in_sec": 600
+    },
+    "publish": {
+      "command": "echo Running Publish",
+      "timeout_in_sec": 600
+    }
+}

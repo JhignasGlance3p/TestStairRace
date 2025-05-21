@@ -41,4 +41,23 @@ Logs/shadercompiler-UnityShaderCompiler.exe0.log
 .vscode/extensions.json
 .vscode/launch.json
 .vscode/settings.json
-.idea/
+
+# OS generated
+.DS_Store
+.DS_Store?
+
+# Android AAR build outputs
+Platform/Exports/
+Platform/Build/
+*.aar
+logs/
+
+# DLL files in Plugins/Nostra
+Platform/Assets/Plugins/Nostra/*.dll
+Platform/Assets/Plugins/Nostra/*.dll.meta
+Platform/Assets/Plugins/Nostra/dll-version.txt
+Platform/Assets/Plugins/Nostra/dll-version.txt.meta
+
+# Gradle files
+.gradle/
+local.properties

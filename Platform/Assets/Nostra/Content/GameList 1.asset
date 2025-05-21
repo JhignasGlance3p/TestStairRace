@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -171701014, guid: d3eeb1592b7d249a4b2c17e662bb1b4c, type: 3}
+  m_Name: GameList 1
+  m_EditorClassIdentifier: 
+  games:
+  - gameAddress: game_stairrace
+    gameName: 
+    base_game_id: 67f66113e3f2b49b1b9a3e4a
+    gameTitleImg: {fileID: 21300000, guid: 9cc54f5cd2f794106a882c2d08fc6f01, type: 3}
+    gameBannerImg: {fileID: 21300000, guid: 91ed7f3cc6a4844138830ad15c38dace, type: 3}
+    gameLogoImg: {fileID: 21300000, guid: f65b8170045a64be3b10c89849d6e372, type: 3}
+    canLoadGame: 1
+  - gameAddress: game_colorclash
+    gameName: 
+    base_game_id: 67f66135e3f2b49b1b9a3e4c
+    gameTitleImg: {fileID: 21300000, guid: aa279eacf59164802a03d26e41b15e22, type: 3}
+    gameBannerImg: {fileID: 21300000, guid: 2c9fdee1f96c642af97e729ce1f505af, type: 3}
+    gameLogoImg: {fileID: 21300000, guid: 2457dbae22b4d45018c72f4873e9902c, type: 3}
+    canLoadGame: 1
+  - gameAddress: game_partyrun
+    gameName: 
+    base_game_id: 67ff6fdf810d6536caa5e8fb
+    gameTitleImg: {fileID: 21300000, guid: 6c2b7e422760649c9a3e2ce3594d09aa, type: 3}
+    gameBannerImg: {fileID: 21300000, guid: 8245104c70caf4eb28ad5cb3e14638f2, type: 3}
+    gameLogoImg: {fileID: 21300000, guid: c653bde06458c46e88c3ff8c8dffc22d, type: 3}
+    canLoadGame: 1
+  - gameAddress: crowdcity
+    gameName: 
+    base_game_id: 67ff6fa6810d6536caa5e8f7
+    gameTitleImg: {fileID: 21300000, guid: cb334605880954cfda1709eb2bd7741d, type: 3}
+    gameBannerImg: {fileID: 21300000, guid: 91aeed773eaf340819892b6064e265aa, type: 3}
+    gameLogoImg: {fileID: 21300000, guid: 57d2d8b1cbe3a4fef9f464f28b331c83, type: 3}
+    canLoadGame: 1
+  - gameAddress: game_bumpergame
+    gameName: 
+    base_game_id: 67ff6fc8810d6536caa5e8f9
+    gameTitleImg: {fileID: 21300000, guid: 4d8152fc94cba4261bbdee8d034e1927, type: 3}
+    gameBannerImg: {fileID: 21300000, guid: 9bfa52c2738664cd389ff3f1f660eadb, type: 3}
+    gameLogoImg: {fileID: 21300000, guid: d9e98edcc29fc4c298a91ffcf2fda5a4, type: 3}
+    canLoadGame: 1
+  - gameAddress: game_bomber
+    gameName: 
+    base_game_id: 67ff6ff3810d6536caa5e8fd
+    gameTitleImg: {fileID: 21300000, guid: c70cdb4dea8a14f878851ef3d7647f69, type: 3}
+    gameBannerImg: {fileID: 21300000, guid: 09939814228304ddcac8d7446b9dffd5, type: 3}
+    gameLogoImg: {fileID: 21300000, guid: b390f00ef07fc4027a6572e70f6cb195, type: 3}
+    canLoadGame: 1
+  - gameAddress: game_mobcontrol
+    gameName: 
+    base_game_id: 67ff700a810d6536caa5e8ff
+    gameTitleImg: {fileID: 21300000, guid: 4a1bd13001c6c40e391e375ce3cdd1ae, type: 3}
+    gameBannerImg: {fileID: 21300000, guid: aacb3b1a021474a639a10b01f51c101a, type: 3}
+    gameLogoImg: {fileID: 21300000, guid: e1fba2e7edc874e5ebc94c10737c049f, type: 3}
+    canLoadGame: 1
+  - gameAddress: game_shapeshift
+    gameName: 
+    base_game_id: 67ff701b810d6536caa5e901
+    gameTitleImg: {fileID: 21300000, guid: 833d51fd712ea42aca84f0542e00bfdb, type: 3}
+    gameBannerImg: {fileID: 21300000, guid: 71386f23d57c44d65a38ad76c75031a1, type: 3}
+    gameLogoImg: {fileID: 21300000, guid: 472cbf9cef58a461295b8d7f47f393a0, type: 3}
+    canLoadGame: 1

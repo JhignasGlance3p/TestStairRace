@@ -1,0 +1,18 @@
+﻿using UnityEngine;
+
+namespace nostra.origami.stumble
+{
+    public class WNDParticlesSpawner : MonoBehaviour
+    {
+        [SerializeField] GameObject particle0, particle1;
+        
+        public void Particle0()
+        {
+            Instantiate(particle0, transform.position, new Quaternion());
+        }
+        public void Particle1()
+        {
+            Instantiate(particle1, transform.position, new Quaternion());
+        }
+    }
+}

@@ -56,14 +56,6 @@ if [ ! -f ".gitignore" ] && [ -f "$OLDPWD/.gitignore" ]; then
     cp "$OLDPWD/.gitignore" ./
 fi
 
-echo -e "${YELLOW}Cleaning Assets/Games and Assets/RemoteAssets/Prefabs except StairRace and its .meta...${NC}"
-
-# For Assets/Games — exclude StairRace folder and StairRace.meta file
-find Platform/Assets/Games/ -mindepth 1 -maxdepth 1 ! -name "StairRace" ! -name "StairRace.meta" -exec rm -rf {} +
-
-# For Assets/RemoteAssets/Prefabs — exclude StairRace folder and StairRace.meta file
-find Platform/Assets/RemoteAssets/Prefabs/ -mindepth 1 -maxdepth 1 ! -name "StairRace" ! -name "StairRace.meta" -exec rm -rf {} +
-
 # Sync files using rsync (only differences)
 rsync -av --delete --exclude-from=".gitignore" --exclude='.git' \
       --exclude='Platform/Assets/Games/*' --exclude='Platform/Assets/RemoteAssets/Prefabs/*' \
@@ -75,7 +67,7 @@ git add .
 if git diff --cached --quiet; then
     echo -e "${YELLOW}No changes to commit.${NC}"
 else
-    git commit -m "chore: sync Platform contents into 3p repo root (test)"
+    git commit -m "chore: sync Platform contents into 3p repo"
     git push https://$GIT_USER@github.com/$REPO.git $BRANCH && echo -e "${GREEN}Sync complete and pushed.${NC}"
 fi
 

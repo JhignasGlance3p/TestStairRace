@@ -45,10 +45,6 @@ else
     git push --set-upstream origin $BRANCH
 fi
 
-# Clean tracked Platform repo files in 3p repo root (optional safety)
-# Instead of removing everything blindly, rsync with --delete will handle removals
-# But to be safe, remove only files/folders that exist in Platform folder
-# You can do a dry-run or delete after rsync --delete
 
 # Copy .gitignore if missing
 if [ ! -f ".gitignore" ] && [ -f "$OLDPWD/.gitignore" ]; then
